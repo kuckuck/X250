@@ -1,0 +1,6 @@
+encryption = allow_incoming,try_outgoing,enable_retry
+port_range = 49165-49165
+check_hash = yes
+directory = /home/nick/torrents/
+session = /home/nick/.session/
+

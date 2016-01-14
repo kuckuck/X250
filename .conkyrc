@@ -1,0 +1,9 @@
+out_to_console yes
+out_to_x no
+background no
+update_interval 2
+total_run_times 0
+use_spacer none
+
+TEXT
+[BAT I R ${battery_time BAT0} ${battery_percent BAT0}% ${battery_time BAT1} ${battery_percent BAT1}%]     [CPU ${cpu cpu0}%]     [RAM ${memperc}%]     [SSD HDD ${diskio /dev/sdb} ${diskio /dev/sda}]     [Rx ${downspeed wlp3s0} ${downspeed enp0s25}]     [Tx ${upspeed wlp3s0} ${upspeed enp0s25}]     [${time %a %b %d %Y}]     [${time %I:%M %p}]
