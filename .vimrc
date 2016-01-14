@@ -52,3 +52,5 @@ set smartcase
 set undofile
 syntax on
 set laststatus=2 "for vim-airline
+set mouse=a
+set mousemodel=popup
