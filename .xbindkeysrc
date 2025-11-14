@@ -1,5 +1,26 @@
-"xbacklight -inc 5"
-	XF86MonBrightnessUp
+###########################
+# xbindkeys configuration #
+###########################
 
-"xbacklight -dec 5"
-	XF86MonBrightnessDown
+#Commands: PrtSc, backlight, volume
+"scrot -q 100"
+  Print
+
+"xbacklight -inc 10"
+  XF86MonBrightnessUp
+"xbacklight -dec 10"
+  XF86MonBrightnessDown
+
+"amixer set Master 10%+"
+  XF86AudioRaiseVolume
+"amixer set Master 10%-"
+  XF86AudioLowerVolume
+"amixer set Master toggle"
+  XF86AudioMute
+
+"xbindkeys_show" 
+  control+shift + q
+
+##################################
+# End of xbindkeys configuration #
+##################################
