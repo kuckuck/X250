@@ -10,9 +10,10 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-/usr/bin/xscreensaver -no-splash &
-feh --bg-scale ~/media/images/sg.jpg &
-conky | while read -r; do xsetroot -name "$REPLY"; done &
+#/usr/bin/xscreensaver -no-splash &
+feh --bg-scale ~/sg.jpg &
+#conky | while read -r; do xsetroot -name "$REPLY"; done &
+/home/nick/conkyrcs/statusbar.sh | while read -r; do xsetroot -name "$REPLY"; done &
 #wmname LG3D &
 xbindkeys
 
@@ -23,5 +24,9 @@ if [ $? -ne 0 ]; then
 fi
 
 #./statusbar.sh &
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 
 exec dwm
