@@ -7,7 +7,7 @@ sleep 2
 
 #Layout
 BAR_H=12
-BIGBAR_W=70
+BIGBAR_W=69
 WIDTH_L=1366
 WIDTH_R=1500 #WIDTH_L + WIDTH_R = 1280
 HEIGHT=16
@@ -66,14 +66,14 @@ CAL_CMD="sh ${HOME}/Scripts/dzencal.sh"
 
 printBattery0() {
 	echo -n "^fg($YELLOW)B0 "
-	echo -n "$(echo $BAT0 | gdbar -fg $YELLOW -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl)"
+	echo -n "$(echo $BAT0 | gdbar -fg $YELLOW -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101)"
 	return
 }
 
 
 printBattery1() {
         echo -n "^fg($GREEN)B1 "
-	echo -n "$(echo $BAT1 | gdbar -fg $GREEN -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl)"
+	echo -n "$(echo $BAT1 | gdbar -fg $GREEN -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101)"
 	return
 }
 
@@ -84,10 +84,10 @@ printVolInfo() {
 	Mute=$(amixer get Master | grep "Mono:" | awk '{print $6}')
 	echo -n "^fg($DZEN_FG2)^ca(1,$VOL_MUTE_CMD)^ca(4,$VOL_UP_CMD)^ca(5,$VOL_DOWN_CMD)VOL^ca()^ca()^ca() "
 	if [[ $Mute == "[off]" ]]; then
-		echo -n "$(echo $Perc | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl) "
+		echo -n "$(echo $Perc | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
 		echo -n "^fg()off"
 	else
-		echo -n "$(echo $Perc | gdbar -fg $CRIT -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl) "
+		echo -n "$(echo $Perc | gdbar -fg $CRIT -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
 		echo -n "^fg()${Perc}%"
 	fi
 	return
@@ -96,7 +96,7 @@ printVolInfo() {
 printCPUInfo() {
 	[[ $CPULoad0 -gt 70 ]] #&& CPULoad0="^fg($CRIT)$CPULoad0^fg()"
 	#echo -n " ^fg($GREEN)CPU ^fg($GREEN)${CPULoad0}%^fg($DZEN_FG2)/^fg($GREEN)${CPULoad1}%"
-  echo -n "^fg($BLUE)CPU ^fg($BLUE)${FREQ}GHz $(echo $CPULoad0 | gdbar -fg $BLUE -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl)"
+  echo -n "^fg($BLUE)CPU ^fg($BLUE)${FREQ}GHz $(echo $CPULoad0 | gdbar -fg $BLUE -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101)"
 #echo -n "^fg($GREEN) CPU1 ^fg($GREEN)${CPULoad1}% $(echo $CPULoad1 | gdbar -fg $GREEN -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -sw o -ss 1 -sw 2 -nonl)"
 	return
 }
@@ -113,7 +113,7 @@ printTempInfo() {
 printMemInfo() {
 #	[[ $MemPerc -gt 70 ]] && CPUTemp="^fg($CRIT)$MemPerc^fg()"
 	#echo -n "^fg($YELLOW)MEM ^fg($YELLOW)${MemPerc}%"
-  echo -n "^fg($BLUE)MEM ^fg($BLUE)${MemPerc}% $(echo $MemPerc | gdbar -fg $BLUE -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl)"
+  echo -n "^fg($BLUE)MEM ^fg($BLUE)${MemPerc}% $(echo $MemPerc | gdbar -fg $BLUE -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101)"
   return
 }
 
@@ -165,7 +165,7 @@ printNetspeed (){
 }
 
 printWiFi () {
-    echo -n "^fg($YELLOW)WiFi $(echo $WiFi | gdbar -fg $YELLOW -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl)"
+    echo -n "^fg($YELLOW)WiFi $(echo $WiFi | gdbar -fg $YELLOW -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101)"
     return
 }
 
