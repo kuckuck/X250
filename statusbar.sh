@@ -28,6 +28,7 @@ GREEN="#A6E22E"
 BLUE="#1B5080"
 YELLOW="#FD971F"
 COLOR_SEP=$DZEN_FG2
+#AWESOMEFONT="xft:Font Awesome 7 Free:size=8"
 #FONT="montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*"
 #FONT="-*-envy code r-medium-r-*-*-14-*-*-*-*-*-iso8859-*"
 #Conky
@@ -160,7 +161,7 @@ printStorage (){
 }
 
 printNetspeed (){
-    echo -n "RX $RX TX $TX"
+    echo -n "^i(/home/nick/arrow_down.xbm) $RX ^i(/home/nick/arrow_up.xbm) $TX"
     return
 }
 
