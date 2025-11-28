@@ -1,0 +1,52 @@
+mpd_host = "127.0.0.1"
+mpd_port = "6600"
+mpd_music_dir = "/data/media/music"
+
+#
+song_columns_list_format = "(6)[white]{l} (25)[blue]{a} (40)[cyan]{t|f} (30)[green]{b}"
+now_playing_prefix = "$b$4» "
+now_playing_suffix = "$/b"
+playlist_display_mode = "columns" # (classic/columns)
+autocenter_mode = "yes"
+centered_cursor = "yes"
+
+# bars
+#
+#song_status_format = "$b$2%a $1/ $3%t $1/ $4%b {(Disc %d) }$1"
+titles_visibility = "yes"
+header_visibility = "yes"
+
+# browser
+#
+browser_playlist_prefix = "$2plist »$9 "
+browser_display_mode = "columns" # (classic/columns)
+
+# colors
+#
+colors_enabled = "yes"
+discard_colors_if_item_is_selected = "yes"
+header_window_color = "white"
+volume_color = "white"
+state_line_color = "white"
+state_flags_color = "white"
+main_window_color = "white"
+color1 = "white"
+color2 = "white"
+#main_window_highlight_color = "white"
+progressbar_color = "white"
+statusbar_color = "white"
+#active_column_color = "white"
+visualizer_color = "white"
+#song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+mpd_crossfade_time = "10"
+
+# misc
+#
+song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
+search_engine_display_mode = "columns" (classic/columns)
+follow_now_playing_lyrics = "yes"
+#display_screens_numbers_on_start = "no"
+#mpd_music_dir = "/home/c00kiemon5ter/music"
+external_editor = "vim"
+use_console_editor = "yes"
+display_bitrate = "yes"

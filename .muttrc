@@ -1,0 +1,76 @@
+## Receive options
+#set folder      = imaps://imap.gmail.com/
+#set imap_user   = nicholaskuck@gmail.com
+#set imap_pass   = "********"
+#set spoolfile   = +INBOX
+
+## mailboxes
+#mailboxes +INBOX "+[Gmail]/All Mail" "+[Gmail]/Chats" "+[Gmail]/Sent Mail" "+[Gmail]/Drafts" "+[Gmail]/Trash" "+SMS" "+Amazon" "+Steam" "+Quora Digest" "+Kraken" "+Paypal" "+Venmo" "+Credit Cards"
+
+#set postponed = "+[Gmail]/Drafts"
+#set trash = "+[Gmail]/Trash"
+#set record ="+[Gmail]/Sent Mail"
+
+set mbox_type=Maildir
+set folder=~/.mail/gmail/
+set spoolfile=+Inbox
+
+mailboxes +Inbox "+[Gmail]/All Mail" "+[Gmail]/Chats" "+[Gmail]/Sent Mail" "+[Gmail]/Drafts" "+[Gmail]/Trash" "+SMS" "+Amazon" "+Steam" "+Quora Digest" "+Kraken" "+Paypal" "+Venmo" "+Credit Cards"
+
+
+# html emails
+set mailcap_path   = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+## Send options
+set realname = 'Nick'
+set from = nicholaskuck@gmail.com
+set smtp_url = "smtps://nicholaskuck@smtp.gmail.com"
+set smtp_pass = "********"
+#set edit_headers=yes
+
+## local cache
+set header_cache = "~/.cache/mutt_headers"
+set message_cachedir = "~/.cache/mutt_messages"
+
+## poll new messages
+# Allow Mutt to open a new IMAP connection automatically.
+#unset imap_passive
+# Keep the IMAP connection alive by polling intermittently (time in seconds).
+#set imap_keepalive = 300
+# How often to check for new mail (time in seconds).
+#set mail_check = 120
+
+## Sidebar settings
+set sidebar_visible
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+# -*-muttrc-*-
+
+## index format
+set date_format="%y-%m-%d %T"
+set index_format="%2C | %Z [%d] %-30.30F (%-4.4c) %s"
+
+## colors
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color prompt brightmagenta black
+color message brightgreen black
+color error brightred black
+color indicator black blue
+color status black blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index green black "~N|~O"
+
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'
+#
+# "T . <enter> ; s" then give the name of the destination mailbox
