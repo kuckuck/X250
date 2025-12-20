@@ -1,3 +1,4 @@
 text/html; elinks -dump -dump-color-mode 1; copiousoutput;
 image/jpeg; sxiv %s;
+image/png; sxiv %s;
 application/pdf; evince %s;
