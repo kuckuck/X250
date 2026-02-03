@@ -78,21 +78,30 @@ printBattery1() {
 	return
 }
 
-
-
+#pulse
 printVolInfo() {
-	Perc=$(amixer get Master | grep "Mono:" | awk '{print $4}' | tr -d '[]%')
-	Mute=$(amixer get Master | grep "Mono:" | awk '{print $6}')
-	echo -n "^fg($DZEN_FG2)^ca(1,$VOL_MUTE_CMD)^ca(4,$VOL_UP_CMD)^ca(5,$VOL_DOWN_CMD)VOL^ca()^ca()^ca() "
-	if [[ $Mute == "[off]" ]]; then
-		echo -n "$(echo $Perc | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
-		echo -n "^fg()off"
-	else
-		echo -n "$(echo $Perc | gdbar -fg $CRIT -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
+	Perc=$(pamixer --get-volume)
+                echo -n "^fg($DZEN_FG2)VOL^ca()^ca()^ca() "
+                echo -n "$(echo $Perc | gdbar -fg $CRIT -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
 		echo -n "^fg()${Perc}%"
-	fi
+
 	return
 }
+
+
+#printVolInfo() {
+#	Perc=$(amixer get Master | grep "Mono:" | awk '{print $4}' | tr -d '[]%')
+#	Mute=$(amixer get Master | grep "Mono:" | awk '{print $6}')
+#	echo -n "^fg($DZEN_FG2)^ca(1,$VOL_MUTE_CMD)^ca(4,$VOL_UP_CMD)^ca(5,$VOL_DOWN_CMD)VOL^ca()^ca()^ca() "
+#	if [[ $Mute == "[off]" ]]; then
+#		echo -n "$(echo $Perc | gdbar -fg $BAR_FG -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
+#		echo -n "^fg()off"
+#	else
+#		echo -n "$(echo $Perc | gdbar -fg $CRIT -bg $BAR_BG -h $BAR_H -w $BIGBAR_W -s o -ss 1 -sw 2 -nonl -max 101) "
+#		echo -n "^fg()${Perc}%"
+#	fi
+#	return
+#}
 
 printCPUInfo() {
 	[[ $CPULoad0 -gt 70 ]] #&& CPULoad0="^fg($CRIT)$CPULoad0^fg()"

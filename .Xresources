@@ -6,7 +6,7 @@ urxvt.boldFont:xft:Droid\ Sans\ Mono\ Slashed:size=8
 urxvt.scrollBar:          false
 urxvt.cursorBlink:        true
 URxvt.buffered: true
-URxvt.geometry: 100x22
+URxvt.geometry: 100x60
 URxvt.letterSpace: -1
 URxvt.lineSpace: 1
 URxvt.internalBorder: 2
@@ -29,26 +29,18 @@ URxvt.internalBorder: 2
  Xft.dpi:       118
 ! ! }}}
 
-
-
-
-
-
-
-
-URxvt.perl-ext-common:  default,matcher
+URxvt.perl-ext-common:  default,matcher,tabbed
 URxvt.url-launcher:      /usr/bin/chromium
 URxvt.matcher.button:   1
 
-URxvt.saveLines: 1000000
-
+URxvt.saveLines: 65535 
 
 URxvt*foreground: #ffffff
 URxvt*background: #020202
 
 !nnoell Colors
 !black
-URxvt*color0:  #3a3c3e
+URxvt*color0:  #020202
 URxvt*color8:  #505055
 !red
 URxvt*color1:  #e0105f
@@ -72,6 +64,10 @@ URxvt*color14: #a0bfbf
 URxvt*color7:  #e5e5e5
 URxvt*color15: #f0f0f0
 
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 0 
+URxvt.tabbed.tab-fg: 0
+URxvt.tabbed.tab-bg: 2
 
 ! xscreensaver ---------------------------------------------------------------
 
@@ -147,4 +143,3 @@ XCalc*ti*button34*background: #444484
 XCalc*ti*button37*background: #555595
 XCalc*ti*button38*background: #555595
 XCalc*ti*button39*background: #555595
-
